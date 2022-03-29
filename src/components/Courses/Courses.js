@@ -5,7 +5,7 @@ import courses from '../../courses.json'
 
 const Courses = () => {
     return (
-        <div style={{ marginTop: '200px' }} className='w-75 mx-auto'>
+        <div style={{ marginTop: '200px' }} className='w-75 mx-auto' id="courses">
             <h2 className='text-center fw-bold mb-4 text-secondary'>Our best courses</h2>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {

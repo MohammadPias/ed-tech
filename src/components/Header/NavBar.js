@@ -14,9 +14,9 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#services">Courses</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#about">About</Nav.Link>
+                            <Nav.Link as={HashLink} to="#home">Home</Nav.Link>
+                            <Nav.Link as={HashLink} to="#courses">Courses</Nav.Link>
+                            <Nav.Link as={HashLink} to="#about">About</Nav.Link>
                             {user?.email && <Nav.Link as={Link} to="/"><h5>{user?.displayName}</h5></Nav.Link>}
                             {!user?.email ? <Nav.Link as={Link} to="/login">Login</Nav.Link> : <Button className='rounded-pill' variant="primary" size="sm" onClick={handleSignOut}>Sign Out</Button>}
                         </Nav>

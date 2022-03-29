@@ -8,7 +8,7 @@ import NavBar from '../Header/NavBar';
 
 const Home = () => {
     return (
-        <div>
+        <div id="home">
             <NavBar />
             <Banner />
             <Courses />
