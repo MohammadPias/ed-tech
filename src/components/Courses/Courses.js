@@ -6,7 +6,7 @@ import courses from '../../courses.json'
 const Courses = () => {
     return (
         <div style={{ marginTop: '200px' }} className='w-75 mx-auto'>
-            <h2 className='text-center text-bold mb-4'>Our best courses</h2>
+            <h2 className='text-center fw-bold mb-4 text-secondary'>Our best courses</h2>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     courses.map(course =>
