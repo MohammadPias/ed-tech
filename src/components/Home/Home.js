@@ -1,4 +1,5 @@
 import React from 'react';
+import About from '../About/About';
 import BootCamp from '../BootCamp/BootCamp';
 import Courses from '../Courses/Courses';
 import Footers from '../Footer/Footer';
@@ -11,6 +12,7 @@ const Home = () => {
             <NavBar />
             <Banner />
             <Courses />
+            <About />
             <BootCamp />
             <Footers />
         </div>
