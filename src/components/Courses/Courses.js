@@ -1,8 +1,30 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import Course from './Course';
+import courses from '../../courses.json'
 
-const courses = [
+const Courses = () => {
+    return (
+        <div style={{ marginTop: '200px' }} className='w-75 mx-auto'>
+            <h2 className='text-center text-bold mb-4'>Our best courses</h2>
+            <Row xs={1} md={2} lg={3} className="g-4">
+                {
+                    courses.map(course =>
+                        <Course key={course.id} course={course} />
+                    )
+                }
+            </Row>
+        </div>
+    );
+};
+
+export default Courses;
+
+
+
+
+
+/* const courses = [
     {
         title: 'Intro to Computer Science',
         sub: 'Building a search engine',
@@ -70,26 +92,5 @@ const courses = [
         duration: '6 month'
     },
 ]
-
-const Courses = () => {
-    return (
-        <div style={{ marginTop: '100px' }} className='w-75 mx-auto'>
-            <h3>All courses will be shown here</h3>
-            <Row xs={1} md={2} lg={3} className="g-4">
-                {
-                    courses.map(course =>
-                        <Course key={course.id} course={course} />
-                    )
-                }
-            </Row>
-        </div>
-    );
-};
-
-export default Courses;
-/* 
-
-
-
-
- */
+const stringify = JSON.stringify(courses)
+console.log(stringify) */

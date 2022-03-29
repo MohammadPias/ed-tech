@@ -1,17 +1,26 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import useFirebase from '../Hooks/useFirebase';
 
 const NavBar = () => {
+    const { user, handleSignOut } = useFirebase();
     return (
         <>
-            <Navbar bg="light" variant="light">
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed="top">
                 <Container>
                     <Navbar.Brand href="#home">Ed-Tech</Navbar.Brand>
-                    <Nav className="ms-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="ms-auto">
+                            <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#services">Courses</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#about">About</Nav.Link>
+                            {user?.email && <Nav.Link as={Link} to="/"><h5>{user?.displayName}</h5></Nav.Link>}
+                            {!user?.email ? <Nav.Link as={Link} to="/login">Login</Nav.Link> : <Button className='rounded-pill' variant="primary" size="sm" onClick={handleSignOut}>Sign Out</Button>}
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </>
