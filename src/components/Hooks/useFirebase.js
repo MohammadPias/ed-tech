@@ -47,9 +47,6 @@ const useFirebase = () => {
         event.preventDefault();
         setIsLoding(true)
         return signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                navigate(redirect_url);
-            })
             .catch(error => {
                 setError(error.message)
             })
